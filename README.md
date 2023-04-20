@@ -4,6 +4,7 @@
 
 ## Abstract
 Our project aims to explore the influence of weather on people's sentiments when writing restaurant reviews on Yelp. Numerous studies have shown that people’s moods can be affected by weather(Denissen et al., 2008; Keller et al., 2005; Klimstra et al., 2011). When people write reviews for restaurants, there could be influences as well. We would like to understand the correlation between weather conditions and the emotions reflected in the written reviews. By examining this relationship, we can gain valuable insights into consumer behavior and decision-making.
+
 We will use dataset released by Yelp, containing details from the reviews, reviewers, and the restaurants. Conveniently, the location of the restaurants and the timestamps of the reviews will enable us to scrap historical weather data. We will then investigate if different weather pattern would generate different sentiments in the reviews.
 
 
