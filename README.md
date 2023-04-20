@@ -14,10 +14,10 @@ The main dataset we will be using is Yelp Dataset (link) — collection containi
 Due to the dataset's large size, it may be reduced by assuming a statistical model for the data, or training can occur in batches of equal size to parallelize the training and cover more parts of the dataset.
 The main files and properties we will be focusing on for our project are:
 
-* business.json
+* business.json <br>
 File contains business data including location data, attributes, and categories. Specifically (prospectively) fields “city”, “latitude”, and “longitude” would be used for the project. 
 
-* review.json
+* review.json <br>
 As per documentation: “[c]ontains full review text data including the user_id that wrote the review and the business_id the review is written for.”
 
 Fields “stars”, “data”, “text”, and an emotive category (i.e., “useful”, “funny”, etc.) would be mainly utilized for the project.
