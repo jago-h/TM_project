@@ -3,7 +3,16 @@
 ## Title
 
 ## Abstract
-A max 150-word description of the project question or idea, goals, dataset used. What story you would like to tell and why? What's the motivation behind your project?
+Our project aims to explore the influence of weather on people's sentiments when writing restaurant reviews on Yelp. Numerous studies have shown that people’s moods can be affected by weather(Denissen et al., 2008; Keller et al., 2005; Klimstra et al., 2011). When people write reviews for restaurants, there could be influences as well. We would like to understand the correlation between weather conditions and the emotions reflected in the written reviews. By examining this relationship, we can gain valuable insights into consumer behavior and decision-making.
+We will use dataset released by Yelp, containing details from the reviews, reviewers, and the restaurants. Conveniently, the location of the restaurants and the timestamps of the reviews will enable us to scrap historical weather data. We will then investigate if different weather pattern would generate different sentiments in the reviews.
+
+
+References:
+* Denissen, J. J. A., Butalid, L., Penke, L., & van Aken, M. A. G. (2008). The effects of weather on daily mood: a multilevel approach. Emotion (Washington, D.C.), 8(5), 662–667. https://doi.org/10.1037/A0013497
+* Keller, M. C., Fredrickson, B. L., Ybarra, O., Côté, S., Johnson, K., Mikels, J., Conway, A., & Wager, T. (2005). A warm heart and a clear head. The contingent effects of weather on mood and cognition. Psychological Science, 16(9), 724–731. https://doi.org/10.1111/J.1467-9280.2005.01602.X
+* Klimstra, T. A., Frijns, T., Keijsers, L., Denissen, J. J. A., Raaijmakers, Q. A. W., van Aken, M. A. G., Koot, H. M., van Lier, P. A. C., & Meeus, W. H. J. (2011). Come rain or come shine: individual differences in how weather affects mood. Emotion (Washington, D.C.), 11(6), 1495–1499. https://doi.org/10.1037/A0024649
+ 
+
 
 ## Research questions
 A list of research questions you would like to address during the project. 
