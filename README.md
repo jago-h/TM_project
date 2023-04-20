@@ -16,7 +16,7 @@ References:
 
 
 ## Research questions
-A list of research questions you would like to address during the project. 
+How does the weather affect the review ratings of restaurants?
 
 ## Dataset
 The main dataset we will be using is Yelp Dataset ([link](https://www.yelp.com/dataset/documentation/main)) — collection containing businesses, reviews, and user data. The dataset is freely available for download and has a size of 8.65GB uncompressed and 4.04GB compressed. As per documentation, “[e]ach file is composed of a single object type, one JSON-object per-line.”
@@ -40,7 +40,16 @@ seem to provide a feasible and free solution. Since the original data is largely
 
 
 ## A tentative list of milestones for the project
-Add here a sketch of your planning for the coming weeks. Please mention who does what.
+1. Github repository set up
+2. YELP dataset loaded successfully
+3. North America weather data for the timespan of the reviews scraped
+4. A workable dataset for the weather created
+5. Baseline model initiated to predict ratings/review sentiment based on weather data
+6. Baseline model trained and evaluated
+7. Potential additional parameters added (might include more information apart from the review text; for example, user’s total reviews and fans count to give a higher weight to the review)
+8. Tuned model trained and evaluated
+9. Model tested with new data
+10. User interface created (input weather -> most likely ratings/sentiments of reviews on the day)
 
 ## Documentation
 This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
