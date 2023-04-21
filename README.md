@@ -1,6 +1,7 @@
-# Default repository template
+# Feeling Under the Weather and Restaurant Rating Tendency: A Tentative NLP Research 
 
-## Title
+## Authors
+Jago Hanuszewicz, Kengo Omi, Stanislav Sauliunas, Veronika Sitnova 
 
 ## Abstract
 Our project aims to explore the influence of weather on people's sentiments when writing restaurant reviews on Yelp. Numerous studies have shown that people’s moods can be affected by weather(Denissen et al., 2008; Keller et al., 2005; Klimstra et al., 2011). When people write reviews for restaurants, there could be influences as well. We would like to understand the correlation between weather conditions and the emotions reflected in the written reviews. By examining this relationship, we can gain valuable insights into consumer behavior and decision-making.
@@ -8,15 +9,18 @@ Our project aims to explore the influence of weather on people's sentiments when
 We will use dataset released by Yelp, containing details from the reviews, reviewers, and the restaurants. Conveniently, the location of the restaurants and the timestamps of the reviews will enable us to scrap historical weather data. We will then investigate if different weather pattern would generate different sentiments in the reviews.
 
 
-References:
+## References
 * Denissen, J. J. A., Butalid, L., Penke, L., & van Aken, M. A. G. (2008). The effects of weather on daily mood: a multilevel approach. Emotion (Washington, D.C.), 8(5), 662–667. https://doi.org/10.1037/A0013497
 * Keller, M. C., Fredrickson, B. L., Ybarra, O., Côté, S., Johnson, K., Mikels, J., Conway, A., & Wager, T. (2005). A warm heart and a clear head. The contingent effects of weather on mood and cognition. Psychological Science, 16(9), 724–731. https://doi.org/10.1111/J.1467-9280.2005.01602.X
 * Klimstra, T. A., Frijns, T., Keijsers, L., Denissen, J. J. A., Raaijmakers, Q. A. W., van Aken, M. A. G., Koot, H. M., van Lier, P. A. C., & Meeus, W. H. J. (2011). Come rain or come shine: individual differences in how weather affects mood. Emotion (Washington, D.C.), 11(6), 1495–1499. https://doi.org/10.1037/A0024649
  
 
-
 ## Research questions
-How does the weather affect the review ratings of restaurants?
+* How does the weather affect the review ratings of restaurants?
+    - Is there any correlation between the mood of a review and its final grade?
+    - How are the emotional sentiments affected by the weather conditions?
+    - To what extend the correlation appear?
+    - What about the areas of mostly 'bad' or 'good' weather?
 
 ## Dataset
 The main dataset we will be using is Yelp Dataset ([link](https://www.yelp.com/dataset/documentation/main)) — collection containing businesses, reviews, and user data. The dataset is freely available for download and has a size of 8.65GB uncompressed and 4.04GB compressed. As per documentation, “[e]ach file is composed of a single object type, one JSON-object per-line.”
