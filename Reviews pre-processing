@@ -45,7 +45,7 @@ original_data['clean_reviews'] = original_data['text'].apply(remove_special_char
 original_data['clean_reviews'] = original_data['clean_reviews'].apply(remove_punctuation)
 original_data['clean_reviews'] = original_data['clean_reviews'].apply(remove_stopwords)
 original_data['clean_reviews'] = original_data['clean_reviews'].apply(lemmatize)
-original_data['clean_reviews'] = original_data['clean_reviews'].apply(nltk.word_tokenize)
+original_data['clean_reviews'] = original_data['clean_reviews'].apply(word_tokenize)
 
 # check results
 print(original_data['clean_reviews'].head(20))
