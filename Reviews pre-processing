@@ -1,0 +1,51 @@
+import pandas as pd
+import string
+import re
+from nltk.corpus import stopwords
+from nltk.stem import WordNetLemmatizer
+from nltk.tokenize import word_tokenize
+
+original_data = pd.read_csv("data/yelp_reviews_restaurants.csv")
+
+# define pre-processing functions
+
+# remove emojis, special characters, numbers
+def remove_special_chars(text):
+    # remove non-ASCII characters
+    text = re.sub(r'[^\x00-\x7F]+', '', text)
+    # remove non-alphabetic characters
+    text = re.sub(r'[^a-zA-Z0-9\s]', '', text)
+    #remove numbers
+    text = re.sub(r'\d+', '', text)
+    return text
+
+# remove punctuation from text
+def remove_punctuation(text):
+    return text.translate(str.maketrans('', '', string.punctuation))
+
+# remove stopwords from text
+def remove_stopwords(text):
+    words = text.split()
+    filtered_words = [word for word in words if word.lower() not in stop_words]
+    return ' '.join(filtered_words)
+
+# lemmatize
+def lemmatize(text):
+    words = text.split()
+    lemmatized_words = [lemmatizer.lemmatize(word) for word in words]
+    return ' '.join(lemmatized_words)
+
+# get list of stopwords to remove
+stop_words = set(stopwords.words('english'))
+# initialize the lemmatizer
+lemmatizer = WordNetLemmatizer()
+
+# apply the functions to clean the original reviews
+original_data['clean_reviews'] = original_data['text'].apply(remove_special_chars)
+original_data['clean_reviews'] = original_data['clean_reviews'].apply(remove_punctuation)
+original_data['clean_reviews'] = original_data['clean_reviews'].apply(remove_stopwords)
+original_data['clean_reviews'] = original_data['clean_reviews'].apply(lemmatize)
+original_data['clean_reviews'] = original_data['clean_reviews'].apply(nltk.word_tokenize)
+
+# check results
+print(original_data['clean_reviews'].head(20))
