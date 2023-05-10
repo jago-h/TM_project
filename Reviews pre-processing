@@ -23,10 +23,10 @@ def remove_special_chars(text):
 def remove_punctuation(text):
     return text.translate(str.maketrans('', '', string.punctuation))
 
-# remove stopwords from text
+# remove stopwords from text and put text in lower case
 def remove_stopwords(text):
     words = text.split()
-    filtered_words = [word for word in words if word.lower() not in stop_words]
+    filtered_words = [word.lower() for word in words if word.lower() not in stop_words]
     return ' '.join(filtered_words)
 
 # lemmatize
@@ -41,11 +41,11 @@ stop_words = set(stopwords.words('english'))
 lemmatizer = WordNetLemmatizer()
 
 # apply the functions to clean the original reviews
-original_data['clean_reviews'] = original_data['text'].apply(remove_special_chars)
-original_data['clean_reviews'] = original_data['clean_reviews'].apply(remove_punctuation)
-original_data['clean_reviews'] = original_data['clean_reviews'].apply(remove_stopwords)
-original_data['clean_reviews'] = original_data['clean_reviews'].apply(lemmatize)
-original_data['clean_reviews'] = original_data['clean_reviews'].apply(word_tokenize)
+original_data['text'] = original_data['text'].apply(remove_special_chars)
+original_data['text'] = original_data['text'].apply(remove_punctuation)
+original_data['text'] = original_data['text'].apply(remove_stopwords)
+original_data['text'] = original_data['text'].apply(lemmatize)
+original_data['text'] = original_data['text'].apply(word_tokenize)
 
-# check results
-print(original_data['clean_reviews'].head(20))
+# save new csv file wih processed reviews
+original_data.to_csv('/data/clean_reviews.csv', index=False)
