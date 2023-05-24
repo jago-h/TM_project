@@ -1,0 +1,30 @@
+import pandas as pd
+from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
+
+# define the sentiment analyzing function
+def analyze_reviews(csv_file_path):
+    # read the reviews file
+    df = pd.read_csv(csv_file_path)
+    analyzer = SentimentIntensityAnalyzer()
+
+    # Add new columns for sentiment scores
+    df['Sentiment score'] = ''
+    df['Sentiment score breakdown'] = ''
+
+    # iterating over each review to identify the sentiment
+    for index, row in df.iterrows():
+        review_text = row['text']
+        vs = analyzer.polarity_scores(review_text)
+
+        # Assign the 'compound' value to "Sentiment score" column
+        df.at[index, 'Sentiment score'] = vs['compound']
+
+        # Assign the remaining sentiment breakdown to "Sentiment score breakdown" column
+        sentiment_breakdown = {key: value for key, value in vs.items() if key != 'compound'}
+        df.at[index, 'Sentiment score breakdown'] = str(sentiment_breakdown)
+
+    # Save the modified DataFrame back to the CSV file
+    df.to_csv(csv_file_path, index=False)
+
+# apply the analysis function
+analyze_reviews('data/super_clean_df.csv')
