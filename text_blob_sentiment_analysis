@@ -1,0 +1,28 @@
+# Text Blod Pandas Sentiment Analysis
+
+from textblob import TextBlob
+import pandas as pd
+
+df = pd.read_csv('data/super_clean_df.csv')
+
+# create lists to which to save given labels and score
+sentiment_labels = []
+sentiment_scores = []
+
+# create a sentiment analysis function
+for index, row in df.iterrows():
+    review = row['text']
+    blob = TextBlob(review)
+    # determine the sentiment
+    sentiment = blob.sentiment
+    # save the sentiment polarity to the list
+    sentiment_labels.append(sentiment.polarity)
+    # save the sentiment subjectivity to the list
+    sentiment_scores.append(sentiment.subjectivity)
+
+# add columns to the original data with the identified polarity and subjectivity score
+df['Sentiment Polarity'] = sentiment_labels
+df['Sentiment Subjectivity'] = sentiment_scores
+
+# Save the updated DataFrame back to CSV
+df.to_csv('super_clean_df_with_sentiment.csv', index=False)
