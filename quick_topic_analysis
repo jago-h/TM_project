@@ -10,7 +10,7 @@ df = pd.read_csv('super_clean_df_with_sentiment.csv')
 negative_reviews = df[df['Sentiment Polarity'] < 0]['text']
 
 # Create a CountVectorizer object
-vectorizer = CountVectorizer(stop_words='english', max_features=70)
+vectorizer = CountVectorizer(stop_words='english', max_features=80)
 
 # Fit and transform the text data
 X = vectorizer.fit_transform(negative_reviews)
@@ -21,7 +21,7 @@ feature_names = vectorizer.get_feature_names_out()
 # Instantiate the LDA model
 """
 topic_word_prior increased from 1.0 to 1.5 for a bigger spread of topics,
-doc_topic_prior decreased from 1.0 to 0.2 for a more precise focus on the dominant words in those topics
+doc_topic_prior decreased from 1.0 to 0.5 for a more precise focus on the dominant words in those topics
 """
 lda = LatentDirichletAllocation(n_components=5, topic_word_prior=1.5, doc_topic_prior=0.2, random_state=1)
 
