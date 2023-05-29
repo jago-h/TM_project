@@ -54,7 +54,25 @@ Since the original data is largely reduced to the US, by using the name of the c
 7. Potential additional parameters added (might include more information apart from the review text; for example, user’s total reviews and fans count to give a higher weight to the review)
 8. Tuned model trained and evaluated
 9. Model tested with new data
-10. User interface created (input weather -> most likely ratings/sentiments of reviews on the day)
+10. Analyse the resuls, create the presentation and final report
 
 ## Documentation
-This can be added as the project unfolds. You should describe, in particular, what your repo contains and how to reproduce your results.
+Our repo contains 3 notebooks with general data analysis:  
+1. Reviews (with some data wrangling)
+2. Weather scraping
+3. PyProcess analysis of reviews sentiment and weather
+
+Furtherly, we provide code for the sentiment analysis of 3 different methods:  
+1. VADER 
+2. Hedonometer 
+3. Text Blob
+
+Finally, in order to work on the data that we did, you have to follow the consequtive steps:  
+1. reviews -> download the data using the Yelp Dataset ([link](https://www.yelp.com/dataset/documentation/main)); the dataset is freely available for download and has a size of 8.65GB uncompressed and 4.04GB compressed; “[e]ach file is composed of a single object type, one JSON-object per-line.”
+2. weather -> follow the git repo ([link](https://github.com/m0rp43us/openmeteopy)); install with the following:  
+```bash
+git clone https://github.com/m0rp43us/openmeteopy
+cd openmeteopy-main/
+pip3 install .
+```  
+then use our code from `weather_scraping.ipynb`, where you can get the weather data for a specific coordinates and date of each review.
