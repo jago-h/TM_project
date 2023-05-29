@@ -35,12 +35,13 @@ File contains business data including location data, attributes, and categories.
 As per documentation: “[c]ontains full review text data including the user_id that wrote the review and the business_id the review is written for.”
 
 Fields “stars”, “data”, “text”, and an emotive category (i.e., “useful”, “funny”, etc.) would be mainly utilized for the project.
-To supplement the main dataset, we will gather auxiliary datasets using web scraping from weather websites. Although we have not yet chosen any specific datasets or web scraping services, sources such as:
+To supplement the main dataset, we will gather auxiliary datasets using web scraping from weather website. We decided on the following source:
 
-* https://weather.com/ via BeautifulSoup Python extension ([link](https://www.crummy.com/software/BeautifulSoup/bs4/doc/)) OR OpenWeatherMap API ([link](https://openweathermap.org/api)) OR Open-Meteo API ([link](https://open-meteo.com/)).
-* https://www.visualcrossing.com/weather-api
+* Open-Meteo Historical Weather API ([link](https://open-meteo.com/en/docs/historical-weather-api)). 
 
-seem to provide a feasible and free solution. Since the original data is largely reduced to the US, by using the name of the city (potentially state in the case of "twin cities") and the time of the review, we should be able to acquire needed weather parameters such as temperature, humidity, and characteristics like "windy", "cloudy", "sunny", etc. without major issues.
+Where we can access a wide range of meteorological data, such as precipitation, wind speed, temperature 2m above the ground, cloudcover, and so on. We will do look for the weather data for the corresponding coordinates to enhance the comprehensiveness and credibility of our analysis.
+
+Since the original data is largely reduced to the US, by using the name of the city (potentially state in the case of "twin cities") and the time of the review, we should be able to acquire needed weather parameters without major issues.
 
 
 ## A tentative list of milestones for the project
