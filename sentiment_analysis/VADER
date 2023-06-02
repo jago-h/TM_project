@@ -3,11 +3,12 @@ from vaderSentiment.vaderSentiment import SentimentIntensityAnalyzer
 
 # define the sentiment analyzing function
 def analyze_reviews(csv_file_path):
-    # read the reviews file
+    # read the review file
     df = pd.read_csv(csv_file_path)
+    # initiate the VADER analyzer
     analyzer = SentimentIntensityAnalyzer()
 
-    # Add new columns for sentiment scores
+    # Add new columns for the sentiment scores to the original DataFrame
     df['Sentiment score'] = ''
     df['Sentiment score breakdown'] = ''
 
@@ -16,7 +17,7 @@ def analyze_reviews(csv_file_path):
         review_text = row['text']
         vs = analyzer.polarity_scores(review_text)
 
-        # Assign the 'compound' value to "Sentiment score" column
+        # Assign the 'compound' score given by the analyzer to the "Sentiment score" column
         df.at[index, 'Sentiment score'] = vs['compound']
 
         # Assign the remaining sentiment breakdown to "Sentiment score breakdown" column
