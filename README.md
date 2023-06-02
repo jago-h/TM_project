@@ -58,14 +58,14 @@ Since the original data is largely reduced to the US, by using the name of the c
 
 ## Documentation
 Our repo contains 3 notebooks with general data analysis:  
-1. Reviews (with some data wrangling)
-2. Weather scraping
-3. PyProcess analysis of reviews sentiment and weather
+1. YELP data analysis (analysis.ipynb)
+2. Weather scraping (weather_scraping.ipynb)
+3. PyProcess analysis of reviews sentiment and weather (PyProcess.ipynb)
 
-Furtherly, we provide code for the sentiment analysis of 3 different methods:  
-1. VADER 
+Futherly, there is a file with review pre-processing code and sentiment_analysis folder, containing the sentiment analysis code of 3 different methods:  
+1. VADER Sentiment
 2. Hedonometer 
-3. Text Blob
+3. TextBlob
 
 Finally, in order to work on the data that we did, you have to follow the consequtive steps:  
 1. reviews -> download the data using the Yelp Dataset ([link](https://www.yelp.com/dataset/documentation/main)); the dataset is freely available for download and has a size of 8.65GB uncompressed and 4.04GB compressed; “[e]ach file is composed of a single object type, one JSON-object per-line.”
