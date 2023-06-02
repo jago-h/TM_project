@@ -1,17 +1,24 @@
-# Text Blod Pandas Sentiment Analysis
-
 from textblob import TextBlob
 import pandas as pd
 
+# read the file with the rewviews
 df = pd.read_csv('data/super_clean_df.csv')
 
-# create lists to which to save given labels and score
+# create lists to which to save given sentiment labels and scores
+"""
+The polarity score saved in the labels is a float within the range [-1.0, 1.0]
+where -1.0 is extremely negative and 1.0 is extremely positive.
+The subjectivity saved in the scores is a float within the range [0.0, 1.0]
+where 0.0 is very objective and 1.0 is very subjective.
+"""
 sentiment_labels = []
 sentiment_scores = []
 
 # create a sentiment analysis function
 for index, row in df.iterrows():
+    # read the review
     review = row['text']
+    # initiate the analyzer
     blob = TextBlob(review)
     # determine the sentiment
     sentiment = blob.sentiment
@@ -20,9 +27,9 @@ for index, row in df.iterrows():
     # save the sentiment subjectivity to the list
     sentiment_scores.append(sentiment.subjectivity)
 
-# add columns to the original data with the identified polarity and subjectivity score
+# add columns to the original data with the identified polarity and subjectivity scores
 df['Sentiment Polarity'] = sentiment_labels
 df['Sentiment Subjectivity'] = sentiment_scores
 
-# Save the updated DataFrame back to CSV
+# save the updated DataFrame to CSV
 df.to_csv('super_clean_df_with_sentiment.csv', index=False)
