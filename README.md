@@ -8,7 +8,6 @@ Our project aims to explore the influence of weather on people's sentiments when
 
 We will use dataset released by Yelp, containing details from the reviews, reviewers, and the restaurants. Conveniently, the location of the restaurants and the timestamps of the reviews will enable us to scrap historical weather data. We will then investigate if different weather pattern would generate different sentiments in the reviews.
 
-
 ## References
 * Denissen, J. J. A., Butalid, L., Penke, L., & van Aken, M. A. G. (2008). The effects of weather on daily mood: a multilevel approach. Emotion (Washington, D.C.), 8(5), 662–667. https://doi.org/10.1037/A0013497
 * Keller, M. C., Fredrickson, B. L., Ybarra, O., Côté, S., Johnson, K., Mikels, J., Conway, A., & Wager, T. (2005). A warm heart and a clear head. The contingent effects of weather on mood and cognition. Psychological Science, 16(9), 724–731. https://doi.org/10.1111/J.1467-9280.2005.01602.X
@@ -76,3 +75,6 @@ cd openmeteopy-main/
 pip3 install .
 ```  
 then use our code from `weather_scraping.ipynb`, where you can get the weather data for a specific coordinates and date of each review.
+
+## Report
+A short project report in the pdf format can be found the WrittenReport.pdf file.
