@@ -6,31 +6,31 @@ def load_hedonometer_lexicon():
     lexicon = {}
     with open('hedonometer_en.csv', 'r') as lex_file:
         csv_reader = csv.reader(lex_file)
-        next(csv_reader)  # Skip header
+        next(csv_reader)  # skip header
         for row in csv_reader:
             word = row[1]
             happiness_score = float(row[3])
             lexicon[word] = happiness_score
     return lexicon
 
-# define sentiment calcualtion function using Hedonometer
+# define sentiment calcualtion function with Hedonometer
 def calculate_sentiment_score(review, hedonometer_lexicon):
     sentiment_tokens = [token for token in review if token in hedonometer_lexicon]
+    # words that are not present in the lexon are assigned value 5.0 (neutral)
     sentiment_score = sum(hedonometer_lexicon.get(token, 5.0) for token in sentiment_tokens) / max(len(sentiment_tokens), 1)
     return sentiment_score
 
-# define pipeline funtion to interate over each reaview and analyze its sentiment
+# define funtion to interate over each reaview and analyze its sentiment
 def analyze_reviews(csv_file_path):
     hedonometer_lexicon = load_hedonometer_lexicon()
     df = pd.read_csv(csv_file_path)
-    sentiment_scores = []  # New list to store sentiment scores
+    sentiment_scores = []  # new list to store sentiment scores
     for index, row in df.iterrows():
         review_text = row['text']
         sentiment_score = calculate_sentiment_score(review_text, hedonometer_lexicon)
-        sentiment_scores.append(sentiment_score)  # Append sentiment score to the list
-    df['Hedonometer sentiment score'] = sentiment_scores  # Add new column to DataFrame
-    df.to_csv(csv_file_path, index=False)  # Save modified DataFrame to the same CSV file
+        sentiment_scores.append(sentiment_score)  # append sentiment score to the list
+    df['Hedonometer sentiment score'] = sentiment_scores  # add new column to the original DataFrame
+    df.to_csv(csv_file_path, index=False)  # save modified DataFrame to the same CSV file
 
 # analyze reviews
 analyze_reviews('data/super_clean_df.csv')
-
